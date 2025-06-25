@@ -1,0 +1,111 @@
+:root {
+    --primary: #3498db;
+    --secondary: #2980b9;
+    --accent: #e74c3c;
+    --light: #ecf0f1;
+    --dark: #2c3e50;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.calculator {
+    width: 320px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.calculator:hover {
+    transform: translateY(-5px);
+}
+
+.display {
+    padding: 20px;
+    text-align: right;
+    background-color: var(--dark);
+    color: white;
+    position: relative;
+}
+
+.previous-operand {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    height: 20px;
+    overflow: hidden;
+}
+
+.current-operand {
+    font-size: 2.5rem;
+    margin-top: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background-color: #ddd;
+}
+
+button {
+    border: none;
+    outline: none;
+    padding: 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.9);
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    background-color: #f1f1f1;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+.operator {
+    background-color: var(--primary);
+    color: white;
+}
+.operator:hover {
+    background-color: var(--secondary);
+}
+
+.equals {
+    background-color: var(--accent);
+    color: white;
+    grid-column: span 2;
+}
+
+.equals:hover {
+    background-color: #c0392b;
+}
+
+.clear, .delete {
+    background-color: var(--light);
+}
+
+.clear:hover, .delete:hover {
+    background-color: #d5dbdb;
+}
